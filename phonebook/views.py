@@ -35,7 +35,7 @@ def edit(request,id):
 def update(request,id):
     contactInfo=Contacts.objects.get(id=id)
     form = ContactsForm(request.POST,instance=contactInfo)
-    if form.isvalid():
+    if form.is_valid():
         form.save()
         return redirect("/show")
     return render(request,'edit.html',{'contactInfo':contactInfo})
