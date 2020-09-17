@@ -44,4 +44,8 @@ def delete(request,id):
     contact=Contacts.objects.get(id=id)
     contact.delete()
     return redirect('/show')
+def deleteAll(request):
+    contact=Contacts.objects.all()
+    contact.delete()
+    return redirect('/show')
 
